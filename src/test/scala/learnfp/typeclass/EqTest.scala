@@ -5,6 +5,8 @@ import EqOps._
 import EqInstances._
 
 class EqTest extends WordSpecLike with Matchers {
+  implicit val li: Eq[List[Int]] = listEqInstance[Int]
+  implicit val si: Eq[List[String]] = listEqInstance[String]
   "Eq should" should {
     "eq ints" in {
       1 ==== 1 shouldBe true
